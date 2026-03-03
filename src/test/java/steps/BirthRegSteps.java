@@ -5,6 +5,9 @@ import io.cucumber.java.en.When;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import utils.CommonMethods;
 
 public class BirthRegSteps extends CommonMethods {
@@ -28,10 +31,33 @@ public class BirthRegSteps extends CommonMethods {
         Assert.assertTrue(checkreq.isEnabled());
         WebElement proccedbtn = driver.findElement(By.xpath("//button[normalize-space()='Proceed']"));
         click(proccedbtn);
+        getwait();
     }
     @When("user proceeds to make payment")
     public void user_proceeds_to_make_payment() {
-        System.out.println("pass");
+        WebElement bankcardno = driver.findElement(By.id("cardNumber"));
+        sendText(bankcardno, "5178 6810 0000 0002");
+        WebElement carddate = driver.findElement(By.name("cardExpiry"));
+        sendText(carddate, "01/30");
+        WebElement bnkcvv = driver.findElement(By.name("cvv"));
+        sendText(bnkcvv, "123");
+        WebElement cardtype = driver.findElement(By.id("cardName"));
+        sendText(cardtype, "card");
+        WebElement billaddr = driver.findElement(By.id("billingAddress"));
+        sendText(billaddr, "20 igbodo str Abuja");
+
+        WebElement countrydropdown = driver.findElement(By.cssSelector("#react-select-2-placeholder"));
+        click(countrydropdown);
+        getJSExecutor();
+        Actions actions = new Actions(driver);
+        actions.moveToElement(countrydropdown).click();
+        WebElement option = getwait().until(ExpectedConditions.elementToBeClickable(By.xpath("//div[text()='Nigeria']")));
+        click(option);
+        WebElement zipcd = driver.findElement(By.cssSelector("[name='postalCode']"));
+        sendText(zipcd, "900001");
+
+        WebElement submitbt = driver.findElement(By.className("submit_btn"));
+        click(submitbt);
     }
 
 }

@@ -42,8 +42,10 @@ public class LoginSteps extends CommonMethods {
         passWordField.sendKeys("@Test123456");
          */
 
-        sendText(ConfigReader.read("email"), login.emailFiled);
-        sendText(ConfigReader.read("password"), login.passWordField);
+        //sendText(ConfigReader.read("email"), login.emailFiled);
+        sendText(login.emailFiled, ConfigReader.read("email"));
+        //sendText(ConfigReader.read("password"), login.passWordField);
+        sendText(login.passWordField, ConfigReader.read("password"));
 
     }
 
@@ -78,8 +80,10 @@ public class LoginSteps extends CommonMethods {
     public void userEntersAndAndVerifyThe(String email1, String password, String errorMessage) {
 
 
-        sendText(email1, login.emailFiled);
-        sendText(password, login.passWordField);
+        //sendText(email1, login.emailFiled);
+        sendText(login.passWordField, email1);
+        //sendText(password, login.passWordField);
+        sendText(login.passWordField, password);
         click(login.signInButtton);
         getwait();
         login.emailFiled.clear();

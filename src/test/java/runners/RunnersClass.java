@@ -11,7 +11,7 @@ import org.junit.runner.RunWith;
         glue = "steps",
         dryRun = false,
         //dryRun = true,
-        tags = "@regression",
+        tags = "@regression1",
         plugin = {"pretty","html:target/cucumber.html",}
 )
 public class RunnersClass {

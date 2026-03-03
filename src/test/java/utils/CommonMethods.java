@@ -50,9 +50,18 @@ public class CommonMethods extends PageInitializer{
         }
 
     }
-    public void sendText(String text, WebElement element){
-        element.clear();
-        element.sendKeys(text);
+    public void sendText(WebElement element, String text){
+        try{
+            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+            wait.until(ExpectedConditions.visibilityOf(element));
+            wait.until(ExpectedConditions.elementToBeClickable(element));
+
+            element.clear();
+            element.sendKeys(text);
+
+        }catch(StaleElementReferenceException e){
+            element.sendKeys(text);
+        }
     }
 
     public void selectFromDropDown(WebElement dropDown, String visibleText){
