@@ -6,7 +6,7 @@ Feature: Birth Registration flow
     And clicks on SIGN IN
     Then user is successfully logged in
 
-@regression1
+@regression
   Scenario: New application
     Given user is successfully logged in to start new birth registration
     When user clicks on start new registration

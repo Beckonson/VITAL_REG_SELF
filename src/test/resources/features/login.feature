@@ -7,7 +7,7 @@ Feature: login functionality
     Then user is successfully logged in
 
 
-  @smoke0
+  @regression
   Scenario Outline: Validating invalid login
     Then user enters "<email>" and "<password>" and verify the "<errorMessage>"
     Examples:

@@ -19,6 +19,7 @@ public class LoginPage extends CommonMethods {
     public WebElement dashboard;
 
     public LoginPage(){
+
         PageFactory.initElements(driver, this);
     }
 }
