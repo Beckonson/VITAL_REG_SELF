@@ -1,5 +1,5 @@
 Feature: login functionality
-  @smoke0
+  @smoke @regression
   Scenario: Valid login
     //Given User navigate to VITALREG portal
     When user enter valid email and password
@@ -7,7 +7,7 @@ Feature: login functionality
     Then user is successfully logged in
 
 
-  @regression
+  @regression, @smoke @regression
   Scenario Outline: Validating invalid login
     Then user enters "<email>" and "<password>" and verify the "<errorMessage>"
     Examples:

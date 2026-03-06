@@ -15,11 +15,11 @@ public class Hooks extends CommonMethods {
     //because it has after tag which is post condition
     public void end(Scenario scenario){
         byte[] pic;
-        //before closing the browser, i need to get the screenshot for the test
+        //before closing the browser, I need to get the screenshot for the test
         //scenario class in cucumber, this class contains all the information about
         // the scenario you are executing
 
-/*
+
         if(scenario.isFailed()) {
             pic = takeScreenshot("failed/"+scenario.getName());
         }else{
@@ -28,7 +28,7 @@ public class Hooks extends CommonMethods {
         //it will attach the screenshot in the report
         scenario.attach(pic,"image/png",scenario.getName());
 
- */
+
 
 
         CloseBrowser();

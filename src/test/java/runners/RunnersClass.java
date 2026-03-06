@@ -12,7 +12,10 @@ import org.junit.runner.RunWith;
         dryRun = false,
         //dryRun = true,
         tags = "@regression",
-        plugin = {"pretty","html:target/cucumber.html",}
+        //tags = "@smoke",
+        plugin = {"pretty","html:target/cucumber.html","json.target/cucumber.json"
+                ,"rerun:target/failed.txt"}
+
 )
 public class RunnersClass {
 }
