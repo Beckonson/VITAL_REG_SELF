@@ -13,8 +13,10 @@ import org.junit.runner.RunWith;
         //dryRun = true,
         tags = "@regression",
         //tags = "@smoke",
-        plugin = {"pretty","html:target/cucumber.html","json.target/cucumber.json"
-                ,"rerun:target/failed.txt"}
+        plugin = {"pretty", "html:target/cucumber.html", "json:target/cucumber.json"
+                //rerun plugin generates the txt file of all failed test cases
+                , "rerun:target/failed.txt"
+        }
 
 )
 public class RunnersClass {
