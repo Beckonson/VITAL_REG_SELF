@@ -8,7 +8,7 @@ Feature:  Foreign birth notification flow
 
   @regression
   Scenario: Foreign birth notification
-    Given user is successfully logged in to check for foreign birth motification
+    Given user is successfully logged in to check for foreign birth notification
     When user checks on requirement terms
     And user proceeds with payment
 
