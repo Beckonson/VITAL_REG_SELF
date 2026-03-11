@@ -14,7 +14,7 @@ import utils.ConfigReader;
 
 public class ForeignbBirthRegSteps extends CommonMethods {
     @Given("user is successfully logged in to check for foreign birth notification")
-    public void user_is_successfully_logged_in_to_check_for_foreign_birth_motification() {
+    public void user_is_successfully_logged_in_to_check_for_foreign_birth_notification() {
 
         //WebElement foreignbrth = driver.findElement(By.xpath("//span[contains(normalize-space(),'Foreign Birth Notification')]"));
         click(foreignbirthreg.foreignbrth);

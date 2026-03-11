@@ -25,7 +25,7 @@ public class ReissuanceSteps extends CommonMethods {
     }
     @When("user proceeds to payment")
     public void user_proceeds_to_payment() {
-        System.out.println("provide payment");
+        System.out.println("Payment confirmed");
     }
 
 }
